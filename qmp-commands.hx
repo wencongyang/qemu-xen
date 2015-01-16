@@ -663,6 +663,48 @@ Example:
 EQMP
 
     {
+        .name       = "xen-get-replication-error",
+        .args_type  = "",
+        .mhandler.cmd_new = qmp_marshal_xen_get_replication_error,
+    },
+
+SQMP
+xen-get-replication-error
+-------
+
+Get replication error that occurs when vm is running
+
+Arguments: None
+
+Example:
+
+-> { "execute": "xen-get-replication-error" }
+<- { "return": {} }
+
+EQMP
+
+    {
+        .name       = "xen-do-checkpoint",
+        .args_type  = "",
+        .mhandler.cmd_new = qmp_marshal_xen_do_checkpoint,
+    },
+
+SQMP
+xen-do-checkpoint
+-------
+
+Do checkpoint
+
+Arguments: None
+
+Example:
+
+-> { "execute": "xen-do-checkpoint" }
+<- { "return": {} }
+
+EQMP
+
+    {
         .name       = "migrate",
         .args_type  = "detach:-d,blk:-b,inc:-i,uri:s",
         .mhandler.cmd_new = qmp_marshal_migrate,

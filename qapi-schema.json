@@ -4119,3 +4119,25 @@
 ##
 { 'command': 'xen-set-replication',
   'data': { 'enable': 'bool', 'primary': 'bool', '*failover' : 'bool' } }
+
+##
+# @xen-get-replication-error
+#
+# Get replicatin error that occurs when the vm is running
+#
+# Returns: nothing
+#
+# Since: 2.6
+##
+{ 'command': 'xen-get-replication-error' }
+
+##
+# @xen-do-checkpoint
+#
+# Do checkpoint
+#
+# Returns: nothing
+#
+# Since: 2.6
+##
+{ 'command': 'xen-do-checkpoint' }
