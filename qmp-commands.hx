@@ -663,6 +663,27 @@ Example:
 EQMP
 
     {
+        .name       = "xen-do-block-checkpoint",
+        .args_type  = "",
+        .mhandler.cmd_new = qmp_marshal_xen_do_block_checkpoint,
+    },
+
+SQMP
+xen-do-checkpoint
+-------
+
+Do block checkpoint
+
+Arguments: None
+
+Example:
+
+-> { "execute": "xen-do-block-checkpoint" }
+<- { "return": {} }
+
+EQMP
+
+    {
         .name       = "migrate",
         .args_type  = "detach:-d,blk:-b,inc:-i,uri:s",
         .mhandler.cmd_new = qmp_marshal_migrate,

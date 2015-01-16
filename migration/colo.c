@@ -32,3 +32,8 @@ void qmp_xen_set_block_replication(bool enable, bool primary,
         bdrv_stop_replication_all(failover, failover ? NULL : errp);
     }
 }
+
+void qmp_xen_do_block_checkpoint(Error **errp)
+{
+    bdrv_do_checkpoint_all(errp);
+}

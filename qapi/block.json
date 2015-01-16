@@ -196,3 +196,14 @@
 ##
 { 'command': 'xen-set-block-replication',
   'data': { 'enable': 'bool', 'primary': 'bool', '*failover' : 'bool' } }
+
+##
+# @xen-do-block-checkpoint
+#
+# Do block checkpoint
+#
+# Returns: nothing
+#
+# Since: 2.6
+##
+{ 'command': 'xen-do-block-checkpoint' }
