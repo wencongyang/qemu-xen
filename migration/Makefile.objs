@@ -5,6 +5,7 @@ common-obj-y += xbzrle.o postcopy-ram.o
 
 common-obj-$(CONFIG_RDMA) += rdma.o
 common-obj-$(CONFIG_POSIX) += exec.o unix.o fd.o
+common-obj-y += colo.o
 
 common-obj-y += block.o
 
