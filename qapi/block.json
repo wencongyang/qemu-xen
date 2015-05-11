@@ -178,3 +178,21 @@
 ##
 { 'event': 'DEVICE_TRAY_MOVED',
   'data': { 'device': 'str', 'tray-open': 'bool' } }
+
+##
+# @xen-set-block-replication
+#
+# Enable or disable block replication
+#
+# @enable: true to enable, false to disable.
+#
+# @primary: true for primary or false for secondary
+#
+# @failover: true to do failover, false to stop
+#
+# Returns: nothing
+#
+# Since: 2.6
+##
+{ 'command': 'xen-set-block-replication',
+  'data': { 'enable': 'bool', 'primary': 'bool', '*failover' : 'bool' } }

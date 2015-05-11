@@ -638,6 +638,31 @@ Example:
 EQMP
 
     {
+        .name       = "xen-set-block-replication",
+        .args_type  = "enable:b,primary:b,failover:b?",
+        .mhandler.cmd_new = qmp_marshal_xen_set_block_replication,
+    },
+
+SQMP
+xen-set-block-replication
+-------
+
+Enable or disable block replication.
+
+Arguments:
+- "enable": Enable it or disable it.
+- "primary": true for primary or false for secondary
+- "failover": Enable to do failover when stoping replcation
+
+Example:
+
+-> { "execute": "xen-set-block-replicate",
+     "arguments": {"enable": true, "primary": false} }
+<- { "return": {} }
+
+EQMP
+
+    {
         .name       = "migrate",
         .args_type  = "detach:-d,blk:-b,inc:-i,uri:s",
         .mhandler.cmd_new = qmp_marshal_migrate,
