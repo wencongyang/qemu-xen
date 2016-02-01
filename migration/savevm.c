@@ -2095,6 +2095,8 @@ void qmp_xen_load_devices_state(const char *filename, Error **errp)
     migration_incoming_state_destroy();
     if (ret < 0) {
         error_setg(errp, QERR_IO_ERROR);
+    } else {
+        bdrv_invalidate_cache_all(errp);
     }
 
 out:
